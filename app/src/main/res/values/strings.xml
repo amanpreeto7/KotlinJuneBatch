@@ -3,4 +3,11 @@
     <string name="login">Login</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="no_account_msg">Don\'t have any account?</string>
+    <string name="register">Register</string>
+    <string name="enter_password">Enter your password</string>
+    <string name="first">First</string>
+    <string name="second">Second</string>
+    <string name="enter_value">Enter Value</string>
+    <string name="checkbox">Checkbox</string>
 </resources>
