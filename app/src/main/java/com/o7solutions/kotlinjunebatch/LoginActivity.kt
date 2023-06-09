@@ -25,7 +25,12 @@ class LoginActivity : AppCompatActivity() {
                 etPassword.error = resources.getString(R.string.enter_password)
             }else {
                 Toast.makeText(this, "Login Successfully", Toast.LENGTH_LONG).show()
+                var email = etEmail.text.toString()
+                var password = etPassword.text.toString()
+                System.out.println("Email $email password $password")
                 var intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("email", email)
+                intent.putExtra("password", password)
                 startActivity(intent)
                 finish()
             }
