@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         et3 = findViewById(R.id.et3)
         et4 = findViewById(R.id.et4)
         //change the action bar title
-        supportActionBar?.title = email
+       // supportActionBar?.title = email
 
         //setting checked change listener on radio group
         rg.setOnCheckedChangeListener { group, checkedId ->

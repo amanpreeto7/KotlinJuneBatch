@@ -1,23 +1,27 @@
 package com.o7solutions.kotlinjunebatch
 
 import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 
 class LoginActivity : AppCompatActivity() {
     lateinit var etEmail : EditText
     lateinit var etPassword : EditText
     lateinit var btnLogin : Button
+    lateinit var toolbar : Toolbar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
-
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
         btnLogin.setOnClickListener{
             if(etEmail.text.toString().isNullOrEmpty()){
                 etEmail.error = "Enter your email"
@@ -35,7 +39,5 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }
         }
-
-
     }
 }
