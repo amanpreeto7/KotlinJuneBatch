@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h_gl_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".20"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_gl_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_gl_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".80"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_gl_95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_image"
+        android:id="@+id/ivTop"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/h_gl_20"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivStar"
+        android:src="@drawable/ic_star"
+        app:layout_constraintTop_toTopOf="@+id/h_gl_20"
+        app:layout_constraintBottom_toBottomOf="@+id/h_gl_20"
+        app:layout_constraintStart_toStartOf="@+id/v_gl_80"
+        app:layout_constraintEnd_toEndOf="@+id/v_gl_80"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSingapore"
+        android:text="@string/singapore"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/v_gl_05"
+        app:layout_constraintTop_toBottomOf="@id/ivTop"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCamera"
+        android:text="@string/camera"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/v_gl_05"
+        app:layout_constraintBaseline_toBaselineOf="@id/etCamera"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etCamera"
+        android:text="@string/camera"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/tvCamera"
+        app:layout_constraintTop_toBottomOf="@id/tvSingapore"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSettings"
+        android:text="@string/settings"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/v_gl_05"
+        app:layout_constraintBaseline_toBaselineOf="@id/etSettings"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etSettings"
+        android:text="@string/settings"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/tvSettings"
+        app:layout_constraintTop_toBottomOf="@id/etCamera"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@+id/v_gl_05"
+        app:layout_constraintEnd_toEndOf="@+id/v_gl_95"
+        app:layout_constraintTop_toBottomOf="@+id/etSettings"
+        app:layout_constraintBottom_toTopOf="@+id/btnUpload">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_singapore"
+            android:textSize="40sp"
+            android:justificationMode="inter_word"
+            />
+    </androidx.core.widget.NestedScrollView>
+
+    
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/discard"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnUpload"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUpload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/upload"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
