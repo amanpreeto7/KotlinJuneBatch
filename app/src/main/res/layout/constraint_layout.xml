@@ -42,14 +42,18 @@
         app:layout_constraintBottom_toTopOf="@id/h_gl_20"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintDimensionRatio="1:1"
         android:id="@+id/ivStar"
+        android:scaleType="fitXY"
+        app:tint="@color/yellow"
         android:src="@drawable/ic_star"
+        app:layout_constraintHorizontal_bias=".85"
         app:layout_constraintTop_toTopOf="@+id/h_gl_20"
         app:layout_constraintBottom_toBottomOf="@+id/h_gl_20"
-        app:layout_constraintStart_toStartOf="@+id/v_gl_80"
-        app:layout_constraintEnd_toEndOf="@+id/v_gl_80"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,30 +80,45 @@
         android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/tvCamera"
         app:layout_constraintTop_toBottomOf="@id/tvSingapore"/>
+
+   <androidx.constraintlayout.widget.Barrier
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/brCamera"
+       app:constraint_referenced_ids="etCamera, tvCamera"
+       app:barrierDirection="bottom"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvSettings"
         android:text="@string/settings"
         android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/brCamera"
         app:layout_constraintStart_toStartOf="@+id/v_gl_05"
-        app:layout_constraintBaseline_toBaselineOf="@id/etSettings"/>
+        />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etSettings"
+        android:visibility="gone"
         android:text="@string/settings"
         android:layout_marginStart="20dp"
         android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/tvSettings"
-        app:layout_constraintTop_toBottomOf="@id/etCamera"/>
+        app:layout_constraintTop_toBottomOf="@id/brCamera"/>
 
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        android:id="@+id/brSettings"
+        app:constraint_referenced_ids="etSettings, tvSettings"/>
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="@+id/v_gl_05"
         app:layout_constraintEnd_toEndOf="@+id/v_gl_95"
-        app:layout_constraintTop_toBottomOf="@+id/etSettings"
+        app:layout_constraintTop_toBottomOf="@+id/brSettings"
         app:layout_constraintBottom_toTopOf="@+id/btnUpload">
         <TextView
             android:layout_width="match_parent"
@@ -110,12 +129,15 @@
             />
     </androidx.core.widget.NestedScrollView>
 
-    
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/discard"
         android:layout_marginEnd="20dp"
+        android:id="@+id/btnDiscard"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnUpload"/>
 
@@ -123,6 +145,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnUpload"
+        app:layout_constraintStart_toEndOf="@+id/btnDiscard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="@string/upload"/>
