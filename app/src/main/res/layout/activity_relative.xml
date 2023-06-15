@@ -2,6 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAlert"
+        android:text="@string/alert"/>
 
     <Button
         android:id="@+id/btnMultiply"
@@ -57,4 +62,11 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvNumber"/>
 
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/snackbar"
+        android:id="@+id/btnSnackbar"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>

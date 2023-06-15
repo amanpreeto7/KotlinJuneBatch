@@ -6,13 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
     lateinit var etEmail : EditText
     lateinit var etPassword : EditText
     lateinit var btnLogin : Button
+    lateinit var llRegister : LinearLayout
     lateinit var toolbar : Toolbar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
         toolbar = findViewById(R.id.toolbar)
+        llRegister = findViewById(R.id.llRegister)
         setSupportActionBar(toolbar)
         btnLogin.setOnClickListener{
             if(etEmail.text.toString().isNullOrEmpty()){
@@ -38,6 +42,10 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
+        }
+
+        llRegister.setOnClickListener{
+            Snackbar.make(llRegister, "This is snackbar", Snackbar.LENGTH_LONG).show()
         }
     }
 }
