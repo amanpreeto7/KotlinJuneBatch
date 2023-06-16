@@ -26,4 +26,9 @@
     <string name="alert">Alert</string>
     <string name="title">Title</string>
     <string name="positive_button">Positive Button</string>
+    <string name="toast">Toast</string>
+    <string name="custom_dialog">Custom Dialog</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="cancel">Cancel</string>
+    <string name="set">Set</string>
 </resources>

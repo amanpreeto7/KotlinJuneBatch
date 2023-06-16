@@ -6,7 +6,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnAlert"
+        android:visibility="gone"
         android:text="@string/alert"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_star"
+        android:text="@string/settings"/>
 
     <Button
         android:id="@+id/btnMultiply"
@@ -62,11 +69,4 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvNumber"/>
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/snackbar"
-        android:id="@+id/btnSnackbar"
-        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
