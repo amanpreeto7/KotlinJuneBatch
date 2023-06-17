@@ -1,29 +1,28 @@
 package com.o7solutions.kotlinjunebatch
 
 import android.app.Dialog
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
+import com.o7solutions.kotlinjunebatch.databinding.ActivityAlertDialogBinding
 
 class AlertDialogActivity : AppCompatActivity() {
 
-    lateinit var btnSnackbar : Button
-    lateinit var btnAlert : Button
-    lateinit var btnCustomAlert : Button
+    lateinit var binding : ActivityAlertDialogBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_alert_dialog)
+        binding = ActivityAlertDialogBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btnSnackbar = findViewById(R.id.btnSnackBar)
-        btnAlert = findViewById(R.id.btnAlert)
-        btnCustomAlert = findViewById(R.id.btnCustomAlert)
-
-        btnSnackbar.setOnClickListener {
+        binding.btnSnackBar.setOnClickListener {
             var snackbar =
-                Snackbar.make(btnSnackbar, "This is snackbar", Snackbar.LENGTH_INDEFINITE)
+                Snackbar.make(binding.btnSnackBar, "This is snackbar", Snackbar.LENGTH_INDEFINITE)
             snackbar.setAnchorView(R.id.btnSnackBar)
             snackbar.setAction("OK") {
                 Toast.makeText(this, "Snackbar Ok Clicked", Toast.LENGTH_LONG).show()
@@ -31,7 +30,7 @@ class AlertDialogActivity : AppCompatActivity() {
             snackbar.show()
         }
 
-        btnAlert.setOnClickListener {
+        binding.btnAlert.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("Alert Title")
                 .setPositiveButton("Positive"){_,_->
@@ -46,13 +45,24 @@ class AlertDialogActivity : AppCompatActivity() {
                 .show()
         }
 
-        btnCustomAlert.setOnClickListener {
+        binding.btnCustomAlert.setOnClickListener {
            var dialog = Dialog(this@AlertDialogActivity)
             dialog.setContentView(R.layout.custom_dialog)
             dialog.show()
             var btnSet = dialog.findViewById<Button>(R.id.btnSet)
+            var etName = dialog.findViewById<EditText>(R.id.etName)
+            etName.setText(binding.tvName.text)
             btnSet.setOnClickListener {
-                dialog.dismiss()
+                if(etName.text.toString().isNullOrBlank()){
+                    etName.error = "Enter name"
+                }else{
+                    binding.tvName.text = etName.text.toString()
+                    dialog.dismiss()
+                    val phone = "+9417846155"
+                    val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
+                    startActivity(intent)
+
+                }
             }
         }
     }
