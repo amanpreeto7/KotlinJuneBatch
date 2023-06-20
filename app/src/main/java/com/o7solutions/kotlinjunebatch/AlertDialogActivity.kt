@@ -66,4 +66,9 @@ class AlertDialogActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
 }
