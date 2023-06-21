@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_graph.xml"
+    app:startDestination="@id/jetpackFirstFragment">
+
+    <fragment
+        android:id="@+id/jetpackFirstFragment"
+        android:name="com.o7solutions.kotlinjunebatch.jetpacknavigation.JetpackFirstFragment"
+        android:label="fragment_jetpack_first"
+        tools:layout="@layout/fragment_jetpack_first" />
+    <fragment
+        android:id="@+id/jetpackNavSecondFragment"
+        android:name="com.o7solutions.kotlinjunebatch.jetpacknavigation.JetpackNavSecondFragment"
+        android:label="fragment_jetpack_nav_second"
+        tools:layout="@layout/fragment_jetpack_nav_second" />
+</navigation>

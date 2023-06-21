@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_20dp"
+    tools:context=".jetpacknavigation.JetpackNavSecondFragment">
+
+   <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/btnNavigate"
+       android:layout_marginVertical="@dimen/margin_20dp"
+       android:text="@string/navigate"/>
+   <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/btnPop"
+       android:textSize="@dimen/size_20sp"
+       android:layout_marginVertical="@dimen/margin_20dp"
+       android:text="@string/pop"/>
+
+</LinearLayout>
