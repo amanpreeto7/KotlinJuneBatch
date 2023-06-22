@@ -16,7 +16,7 @@
         android:theme="@style/Theme.KotlinJuneBatch"
         tools:targetApi="31">
         <activity
-            android:name=".jetpacknavigation.JetpackActivity"
+            android:name=".spinnerpackage.SpinnerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,13 +25,24 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".jetpacknavigation.JetpackActivity"
+            android:exported="true">
+         <!--   <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
             android:name=".FragmentActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".AlertDialogActivity"

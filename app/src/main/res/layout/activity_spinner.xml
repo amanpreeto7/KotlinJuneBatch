@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".spinnerpackage.SpinnerActivity">
+
+    <Spinner
+        android:entries="@array/gender_array"
+        android:padding="@dimen/margin_20dp"
+        android:layout_margin="@dimen/margin_20dp"
+        android:id="@+id/staticSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dynamicSpinner"
+        android:padding="@dimen/margin_20dp"
+        android:layout_margin="@dimen/margin_20dp"
+        />
+</LinearLayout>

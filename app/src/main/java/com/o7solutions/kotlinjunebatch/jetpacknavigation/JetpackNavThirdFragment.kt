@@ -1,24 +1,19 @@
 package com.o7solutions.kotlinjunebatch.jetpacknavigation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.o7solutions.kotlinjunebatch.R
 import com.o7solutions.kotlinjunebatch.databinding.FragmentJetpackNavSecondBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
- * Use the [JetpackNavSecondFragment.newInstance] factory method to
+ * Use the [JetpackNavThirdFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class JetpackNavSecondFragment : Fragment() {
+class JetpackNavThirdFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,8 +33,6 @@ class JetpackNavSecondFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentJetpackNavSecondBinding.inflate(layoutInflater)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
             var name = it.getString("name1")
             binding.tvName.setText("Your name $name")
             System.out.println("name = $name")
@@ -49,14 +42,13 @@ class JetpackNavSecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvName.setText("Second Fragment")
-
+        binding.tvName.setText("Third Fragment")
         binding.btnPop.setOnClickListener {
             jetpackActivity.navController.popBackStack()
         }
 
         binding.btnNavigate.setOnClickListener {
-            jetpackActivity.navController.navigate(R.id.action_jetpackNavSecondFragment_to_jetpackNavThirdFragment)
+            jetpackActivity.navController.navigate(R.id.action_jetpackNavThirdFragment_to_jetpackNavFourthFragment)
         }
     }
 
@@ -72,10 +64,8 @@ class JetpackNavSecondFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            JetpackNavSecondFragment().apply {
+            JetpackNavThirdFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
                 }
             }
     }

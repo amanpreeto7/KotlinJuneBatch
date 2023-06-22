@@ -14,5 +14,29 @@
         android:id="@+id/jetpackNavSecondFragment"
         android:name="com.o7solutions.kotlinjunebatch.jetpacknavigation.JetpackNavSecondFragment"
         android:label="fragment_jetpack_nav_second"
-        tools:layout="@layout/fragment_jetpack_nav_second" />
+        tools:layout="@layout/fragment_jetpack_nav_second" >
+        <action
+            android:id="@+id/action_jetpackNavSecondFragment_to_jetpackNavThirdFragment"
+            app:destination="@id/jetpackNavThirdFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/jetpackNavThirdFragment"
+        android:name="com.o7solutions.kotlinjunebatch.jetpacknavigation.JetpackNavThirdFragment"
+        android:label="JetpackNavThirdFragment" >
+        <action
+            android:id="@+id/action_jetpackNavThirdFragment_to_jetpackNavFourthFragment"
+            app:destination="@id/jetpackNavFourthFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/bounce_interpolator"
+            app:popExitAnim="@android:anim/cycle_interpolator"
+            app:popUpTo="@id/jetpackNavSecondFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/jetpackNavFourthFragment"
+        android:name="com.o7solutions.kotlinjunebatch.jetpacknavigation.JetpackNavFourthFragment"
+        android:label="JetpackNavFourthFragment" />
 </navigation>
