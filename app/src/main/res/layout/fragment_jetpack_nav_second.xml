@@ -7,6 +7,10 @@
     android:padding="@dimen/margin_20dp"
     tools:context=".jetpacknavigation.JetpackNavSecondFragment">
 
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/tvName"/>
    <Button
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"

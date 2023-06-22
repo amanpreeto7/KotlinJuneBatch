@@ -28,10 +28,7 @@ class JetpackNavSecondFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         jetpackActivity = activity as JetpackActivity
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -40,6 +37,13 @@ class JetpackNavSecondFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentJetpackNavSecondBinding.inflate(layoutInflater)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+            var name = it.getString("name1")
+            binding.tvName.setText("Your name $name")
+            System.out.println("name = $name")
+        }
         return binding.root
     }
 

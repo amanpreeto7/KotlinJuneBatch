@@ -47,7 +47,9 @@ class JetpackFirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnMove.setOnClickListener {
-            jetpackActivity.navController.navigate(R.id.jetpackNavSecondFragment)
+            var bundle = Bundle()
+            bundle.putString("name", binding.etName.text.toString())
+            jetpackActivity.navController.navigate(R.id.jetpackNavSecondFragment, bundle)
         }
     }
 

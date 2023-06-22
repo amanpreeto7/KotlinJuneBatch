@@ -4,9 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/yellow"
+    android:orientation="vertical"
     tools:context=".jetpacknavigation.JetpackFirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName"
+        android:hint="@string/enter_your_name"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etCity"
+        android:hint="@string/enter_your_city"/>
     <Button
         android:id="@+id/btnMove"
         android:layout_width="wrap_content"
